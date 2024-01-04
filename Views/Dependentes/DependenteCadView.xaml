@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TelaLogin.Views.Dependentes.DependenteCadView"
+             Title="Visitante/Colaborador">
+    <StackLayout VerticalOptions="Center" Padding="20">
+
+        <!-- Espaço para o logotipo -->
+
+        <!-- Espaço em branco no topo para ajustar a posição da imagem -->
+        <BoxView HeightRequest="20" Color="Transparent" />
+
+        <!-- Caixa de texto e label para E-Mail -->
+        <StackLayout Spacing="5">
+            <Label FontSize="Medium" Text="Nome:" TextColor="Black" FontAttributes="Bold" Margin="5, 0, 0, 0"/>
+            <Border Stroke="Pink"
+                StrokeThickness="0"
+                WidthRequest="350"
+                HeightRequest="33"
+                Margin="0, 0, 0, 0"
+                HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Entry BackgroundColor="White" Text ="{Binding NomeDependenteDTO}" FontSize="14" HeightRequest="33" WidthRequest="350"/>
+            </Border>
+        </StackLayout>
+
+        <!-- Espaço em branco no topo para ajustar a posição da imagem -->
+        <BoxView HeightRequest="15" Color="Transparent" />
+        <!-- Caixa de texto e label para Senha -->
+        <StackLayout Spacing="5">
+            <Label FontSize="Medium" Text="CPF:" TextColor="Black" FontAttributes="Bold" Margin="5, 0, 0, 0"/>
+            <Border Stroke="Pink"
+                StrokeThickness="0"
+                WidthRequest="350"
+                HeightRequest="33"
+                Margin="0, 0, 0, 0"
+                HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Entry  BackgroundColor="White" Text="{Binding CpfDependenteDTO}" FontSize="14" HeightRequest="33" />
+            </Border>
+        </StackLayout>
+
+        <!-- Espaço em branco no topo para ajustar a posição da imagem -->
+        <BoxView HeightRequest="40" Color="Transparent" />
+        <StackLayout Orientation="Horizontal" Spacing="57" Background="Transparent" HeightRequest="70" HorizontalOptions="Center">
+            <!-- Botão de Novar Reserva -->
+            <Button Text="Cancelar"  BorderWidth="1" BorderColor="#039298" FontAttributes="Bold" Pressed="OnButtonClicked" BackgroundColor="white" Command="{Binding AutenticarCommand}" TextColor="black" HorizontalOptions="Start"  CornerRadius="20" WidthRequest="150" HeightRequest="45"/>
+
+            <!-- Espaço em branco no topo para ajustar a posição da imagem -->
+            <!-- Botão de Editar -->
+            <Button Text="Confirmar" FontAttributes="Bold" Command="{Binding PostDependenteCommand}" TextColor="black" HorizontalOptions="End" BackgroundColor="white" BorderWidth="1"  BorderColor="#039298" CornerRadius="20" HeightRequest="45" WidthRequest="150"/>
+        </StackLayout>
+        <!-- Espaço em branco no topo para ajustar a posição da imagem -->
+    </StackLayout>
+</ContentPage>
